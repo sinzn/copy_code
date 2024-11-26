@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Copy Example</title>
+    <style>
+        /* Global black and white theme */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: .9rem;
+            /* margin-bottom: px; */
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: .5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Don't Copy </h1>
+        <p>This is fun Project to present for Aware people don't copy any text from anywhere </p>
+        <p class="highlight">Select and copy this text to reveal the fun part. 🎉</p>
+    </div>
+
+    <script>
+        document.addEventListener("copy", (event) => {
+            // Prevent default copy behavior
+            event.preventDefault();
+
+            // Get the current date and time
+            const now = new Date();
+            const day = now.getDate();
+            const month = now.getMonth() + 1; // Months are 0-indexed
+            const year = now.getFullYear();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+
+            // Construct an emoji message
+            const happyEmoji = "😄";
+            const middleFingerEmoji = "🖕";
+            const dateEmoji = "📅";
+            const timeEmoji = "⏰";
+
+            const emojiMessage = `
+        ${happyEmoji} You've been tricked! ${middleFingerEmoji}
+        ${dateEmoji} ${day}/${month}/${year} 
+        ${timeEmoji} ${hours}:${minutes}
+      `;
+
+            // Set the clipboard data to the emoji message
+            event.clipboardData.setData("text/plain", emojiMessage.trim());
+        });
+    </script>
+</body>
+
+</html>
