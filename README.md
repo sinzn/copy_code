@@ -1,2 +1,4 @@
-# Code_don-t_copy
-This repo is contain the code which we don't copy some code don't try to copy that perfect example of every code not to copy
+# Copy_code
+## This is fun project which i am create to go for the practice of javascipt how ethical person should trick laemon person
+
+Lets Fun :  [Try Here✌️](https://sinzn.github.io/copy_code)
